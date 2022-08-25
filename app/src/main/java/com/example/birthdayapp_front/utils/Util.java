@@ -24,9 +24,8 @@ public class Util {
         return null;
     }
 
-    public static boolean isEmailValid(String email) {
-        Pattern pattern = Patterns.EMAIL_ADDRESS;
-        if (pattern.matcher(email).matches()&& email.length()<=50) {
+    public static boolean isUsernameValid(String username) {
+        if (username.length() >=4 && username.length()<=30) {
             return true;
         }
         else{
@@ -35,7 +34,7 @@ public class Util {
     }
 
     public static boolean isPasswordValid(String password) {
-        if (password.length()>=5 && password.length()<=30){
+        if (password.length()>=4 && password.length()<=30){
             return true;
         }
         else {
