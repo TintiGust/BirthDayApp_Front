@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,10 +18,14 @@ public class SplashScreenActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
 
         if ( sharedPref.getBoolean("logBool", false)) {
+            Log.d("lol", "if splashscreen");
             startActivity(new Intent(this, MainActivity.class));
         }
         else{
+            Log.d("lol", "else splashscreen ");
             startActivity(new Intent(this, LoginActivity.class));
         }
+        finish();
     }
+
 }
