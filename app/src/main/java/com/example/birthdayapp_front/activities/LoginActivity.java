@@ -4,9 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -18,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.birthdayapp_front.R;
 import com.example.birthdayapp_front.databinding.ActivityLoginBinding;
@@ -156,7 +155,9 @@ public class LoginActivity extends AppCompatActivity implements ApiCallback {
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putBoolean("logBool", true);
             editor.apply();
-            startActivity( new Intent(this, MainActivity.class));
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("jsonUser", json);
+            startActivity(intent);
         });
     }
 }

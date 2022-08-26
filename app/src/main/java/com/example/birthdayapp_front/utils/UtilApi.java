@@ -1,15 +1,10 @@
 package com.example.birthdayapp_front.utils;
 
-import android.content.Context;
 import android.util.Log;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Map;
 
 import okhttp3.Call;
@@ -19,7 +14,6 @@ import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import okio.Buffer;
 
 
 public class UtilApi {
@@ -71,11 +65,11 @@ public class UtilApi {
             @Override
             public void onResponse(@NotNull Call call, @NotNull final Response response) throws IOException {
                 if (response.isSuccessful()) {
-                    Log.d("lol", "code http " + response.toString());
+                    Log.d("lol", "code http " + response);
                     callback.success(response.body().string());
                 }
                 else {
-                    Log.d("lol", "code http " + response.toString());
+                    Log.d("lol", "code http " + response);
                     callback.fail("error on Response");
                 }
             }

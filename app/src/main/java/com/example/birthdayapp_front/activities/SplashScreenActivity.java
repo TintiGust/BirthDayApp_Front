@@ -17,6 +17,8 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
 
+        Log.d("lol", "splash screen activity" + sharedPref.getBoolean("logBool", false));
+
         if ( sharedPref.getBoolean("logBool", false)) {
             Log.d("lol", "if splashscreen");
             startActivity(new Intent(this, MainActivity.class));
